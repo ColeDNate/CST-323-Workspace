@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	</head>
+	
+	
+	<body>
+		
+		<div>
+		
+			<h2 th:text="${message}">This is my default text</h2><br/>
+		
+			<form action="#" th:action="@{ShowVehicle}" th:object="${VehicleModel}" method="post">
+				<table>
+					<tr>
+						<td>Driver ID:</td><td><input type="text" th:field="*{driverID}"></td>
+					</tr>
+					<tr>
+						<td>Driver Name:</td><td><input type="text" th:field="*{driverName}"></td>
+					</tr>
+					<tr>
+						<td>Vehicle Year:</td><td><input type="number" min="1900" max="2027" th:field="*{vehicleYear}"></td>
+					</tr>
+					<tr>
+						<td>Vehcle Make:</td><td><input type="text" th:field="*{vehicleMake}"></td>
+					</tr>
+					<tr>
+						<td>Vehicle Model:</td><td><input type="text" th:field="*{vehicleModel}"></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Submit"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
+		<a th:href="@{test4?message=Hello World from a Thymelead template!}"> Go to /test4</a><br/>
+		<a th:href="@{test3}">Go to /test3</a><br/>
+		<a th:href="@{test2}">Go to /test2</a><br/>
+	</body>
+</html> 
