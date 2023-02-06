@@ -1,7 +1,8 @@
 /*********************
  * Note: when logging into localhost:8080/hello
  * 		username: user
- * 		password: (found in console on startup)
+ * 		password: test123
+ * 			password changed in application.properties page
  */
 
 package com.gcu.controller;
@@ -49,7 +50,7 @@ public class DataController {
 	public String test2(Model model) {
 		
 		//;return string
-		model.addAttribute("message", "Hello Spring MVC Framework!");
+		model.addAttribute("message", "Hello, welcome to the vehicle registration!");
 		return "main";
 	}
 	
