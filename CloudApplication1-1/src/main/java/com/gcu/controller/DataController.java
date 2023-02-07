@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gcu.model.VehicleModel;
-import com.gcu.services.VehicleServiceInterface;
 
 
 @Controller
