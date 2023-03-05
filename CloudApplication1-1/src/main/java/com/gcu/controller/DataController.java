@@ -7,6 +7,10 @@
 
 package com.gcu.controller;
 
+//loger?
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.gcu.CloudApplication11Application;
 import com.gcu.model.VehicleModel;
 
 
@@ -24,7 +29,8 @@ import com.gcu.model.VehicleModel;
 @Primary
 @RequestMapping("/main")
 public class DataController {
-	
+	//logger
+	Logger logger = LoggerFactory.getLogger(DataController.class);
 	
 	/**
 	 * Simple hello world controller that returns a string in the response body
@@ -33,6 +39,9 @@ public class DataController {
 	@GetMapping("/test1")
 	@ResponseBody
 	public String printHello() {
+		//more logger
+		logger.info("This is default log from Cloud App");
+		
 		// return string in the response body (must use @ResponseBody annotation
 		return "Hello World!";
 	}
@@ -47,6 +56,8 @@ public class DataController {
 	 */
 	@GetMapping("/test2")
 	public String test2(Model model) {
+		//more logger
+		logger.info("This is default log from test page two");
 		
 		//;return string
 		model.addAttribute("message", "Hello, welcome to the vehicle registration!");
